@@ -54,11 +54,4 @@ A fast, accessible, and brand-consistent tip calculator for **Better Endeavors L
 
 ---
 
-## Quick Start
 
-1. Copy files into a folder named `tip-calculator/` (see repo tree below).
-2. Open `index.html` in a browser **or** run a tiny server:
-   ```bash
-   # Python 3
-   python -m http.server
-   # then visit http://localhost:8000
