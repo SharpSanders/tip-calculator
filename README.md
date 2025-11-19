@@ -1,64 +1,109 @@
-# Better Endeavors — Tip Calculator
+# 🧮 Tip Calculator  
+A modern, smart, and fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
+Designed to handle real-world restaurant scenarios: tax, service charges, rounding, per-person splits, and more.
 
-A fast, accessible, and brand-consistent tip calculator for **Better Endeavors LLC** (co-founders: Trevyn Sanders & Anthony “Tony” Dries Jr.). Built with plain HTML, CSS, and JavaScript — zero dependencies. Mobile-first, keyboard-friendly, and tuned for Lighthouse 95+/100+.
-
----
-
-## Features
-
-- **Bill input** with locale-aware currency formatting (graceful fallback).
-- **Tip selection**: 10%, 15%, 18%, 20%, 22% presets + **Custom**.
-- **Split** by 1–20 people with stepper buttons and keyboard support.
-- **Tax**: optional % (default `0`), with **Include tax in tip?** toggle.
-- **Service charge**: optional % with **Apply service charge?** toggle.
-- **Rounding modes**:  
-  - **No rounding** (raw)  
-  - **Round tip** (tip to nearest cent; totals updated)  
-  - **Round total/person** (per-person to nearest cent; group total adjusted; shows **rounding delta**)
-- **Live results**: tip amount, total, per-person tip, per-person total.
-- **Effective tip %** label (educational: vs bill-only and vs chosen base).
-- **Real-time validation** + inline helper text + screen reader announcements.
-- **Quick Reset** and **Copy breakdown** (clipboard).
-- **Persistence**: keeps your last settings in `localStorage`; bill clears on reload.
-- **Light/Dark** auto theme via `prefers-color-scheme`.
+![Tip Calculator Screenshot](./screenshot-tip-calculator.png)
 
 ---
 
-## Screenshots (paths)
-- App UI (light): `assets/og-image.png`
-- Logo mark: `assets/logo.svg`
-- Favicons: `icons/favicon.svg`, `icons/favicon.ico`
+## 🚀 Features
 
-> `assets/og-image.png` is a small placeholder you can swap for a real 1200×630 Open Graph image later.
+### 💵 Bill & Tip Management
+- Auto-formatted bill input  
+- Quick-select tip buttons (10%, 15%, 18%, 20%, 22%)  
+- Custom tip percentage input  
+- Accurate calculations with rounding options  
+
+### 👥 Splitting & Rounding Options
+- Split totals among **1–20 people**  
+- Smart rounding modes:  
+  - **None**  
+  - **Round tip**  
+  - **Round total**  
+  - **Round per person**
+
+### 🧾 Tax & Service Charge Controls
+- Add a **sales tax %**  
+- Option to **include tax in tip calculation**  
+- Optional **service charge %** (calculated before tip)
+
+### 📊 Clean Breakdown Output
+- Tip amount  
+- Tax amount  
+- Service charge  
+- Total bill  
+- Per-person total  
+- Full summary that updates live  
+
+### 📋 Copyable Summary
+- Built-in “Copy breakdown” button for sending totals in messages  
+- Visual feedback when copied successfully  
+
+### 🖥️ Responsive Dark UI
+- Modern dashboard-style interface  
+- Mobile-first  
+- Animated button states  
+- Accessible form controls  
 
 ---
 
-## Brand Palette
+## 🛠️ Tech Stack
 
-| Token                    | HEX      | HSL (approx)      | Usage                                   | AA Contrast (examples) |
-|--------------------------|----------|-------------------|-----------------------------------------|-------------------------|
-| `--color-primary`        | `#162B51`| `hsl(216,56%,20%)`| Headers, primary buttons, focus outline? | On `#E9EEF7` ≈ **9.5:1** |
-| `--color-secondary`      | `#2E6EBE`| `hsl(213,61%,46%)`| Links, secondary accents                 | On `#E9EEF7` ≈ **5.7:1** |
-| `--color-accent`         | `#00BFA6`| `hsl(171,100%,37%)`| CTAs/success, focus ring                 | On `#0E1420` ≈ **4.9:1** |
-| `--color-text`           | `#0E1420`| `hsl(219,39%,9%)` | Body text                                | On `#FFFFFF` ≈ **14:1**  |
-| `--color-bg`             | `#FFFFFF`| `hsl(0,0%,100%)`  | Page background                          | —                       |
-| `--color-surface`        | `#E9EEF7`| `hsl(219,58%,93%)`| Panels, inputs                           | On text `#162B51` **9.5:1** |
-| `--color-neutral-700`    | `#1B2433`| `hsl(219,30%,16%)`| Dark UI elements                         | On `#E9EEF7` **11+:1**  |
-| `--color-neutral-500`    | `#3D4A61`| `hsl(219,23%,31%)`| Muted text, borders                      | On `#FFFFFF` **7+:1**   |
-| `--color-neutral-300`    | `#8EA0BF`| `hsl(218,26%,65%)`| Subtle borders, meta text                | On `#0E1420` **5+:1**   |
-| `--color-error`          | `#C0392B`| `hsl(6,63%,47%)`  | Validation errors                        | On `#FFFFFF` **5+:1**   |
-
-**Focus ring**: 2px outline `#00BFA6` with `outline-offset: 2px`.
-
-> Ratios are approximate; all body text and controls meet or exceed WCAG **AA (≥4.5:1)**.
+- **HTML5**
+- **CSS3** (custom dark UI)
+- **JavaScript (ES6+)**
+- No frameworks — lightweight & fast
 
 ---
 
-## Quick Start
+## 📁 Project Structure
 
-1. Copy files into a folder named `tip-calculator/` (see repo tree below).
-2. Open `index.html` in a browser **or** run a tiny server:
-   ```bash
-   # Python 3
-   python -m http.server
-   # then visit http://localhost:8000
+tip-calculator/
+│
+├── index.html
+├── style.css
+├── script.js
+├── calc.test.js # logic tests (optional)
+├── favicon.ico
+├── favicon.svg
+├── logo.svg
+└── screenshot-tip-calculator.png
+
+yaml
+Copy code
+
+---
+
+## 🔧 Setup
+
+Just open:
+
+index.html
+
+yaml
+Copy code
+
+in any browser — no build steps required.
+
+---
+
+## 🌐 Live Demo (Optional)
+
+If you want, I can help you deploy this via:
+
+- GitHub Pages  
+- Netlify  
+- Vercel  
+
+Just say the word.
+
+---
+
+## 🔗 GitHub Repository
+
+https://github.com/SharpSanders/tip-calculator
+
+---
+
+### © 2025 Better Endeavors LLC  
+Built with clean code, modern UI, and pure JavaScript.

@@ -1,192 +1,243 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Better Endeavors — Tip Calculator</title>
+  <meta charset="UTF-8" />
+  <title>Tip Calculator | Better Endeavors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A fast, accessible, brand-consistent tip calculator by Better Endeavors LLC." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Better Endeavors — Tip Calculator" />
-  <meta property="og:description" content="A fast, accessible, brand-consistent tip calculator by Better Endeavors LLC." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-image.png" />
-  <meta property="og:url" content="." />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Better Endeavors — Tip Calculator" />
-  <meta name="twitter:description" content="A fast, accessible, brand-consistent tip calculator by Better Endeavors LLC." />
-  <meta name="twitter:image" content="assets/og-image.png" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
-  <link rel="alternate icon" type="image/x-icon" href="icons/favicon.ico" />
-  <link rel="apple-touch-icon" href="icons/favicon.svg" />
-
-  <!-- Basic CSP -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; base-uri 'self'; form-action 'self'">
-
-  <!-- Styles -->
-  <link rel="preload" as="image" href="assets/logo.svg" />
-  <link rel="stylesheet" href="styles/style.css" />
-
+  <meta
+    name="description"
+    content="A smart tip calculator by Better Endeavors LLC – handle tax, service charge, rounding, and per-person splits."
+  />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <img src="./img/favicon.svg" alt="Better Endeavors LLC logo" class="brand-logo" />
+        <span class="brand-name">Better Endeavors LLC</span>
+      </div>
+      <h1 class="app-title">Tip Calculator</h1>
+      <p class="app-subtitle">
+        Quickly figure out tips, tax, service charges, and per-person totals – without mental math. 
+      </p>
+    </header>
 
-  <header class="site-header" role="banner">
-    <div class="brand">
-      <!-- Inline SVG logo (also available as assets/logo.svg) -->
-      <svg class="logo" width="164" height="24" viewBox="0 0 820 120" aria-hidden="true" focusable="false">
-        <rect x="0" y="20" width="140" height="80" rx="12" fill="#162B51"></rect>
-        <path d="M25 60 l25 25 45 -50" fill="none" stroke="#00BFA6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="160" y="82" font-size="56" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif" fill="#162B51">
-          Better Endeavors LLC
-        </text>
-      </svg>
-      <h1 class="visually-hidden">Better Endeavors — Tip Calculator</h1>
-    </div>
-  </header>
-
-  <main id="main" class="container" role="main">
-    <noscript>
-      <p class="no-js">This calculator needs JavaScript enabled. You can still estimate tips by multiplying your bill by a tip %.</p>
-    </noscript>
-
-    <form id="tip-form" novalidate>
-      <section class="panel inputs" aria-labelledby="inputs-title">
-        <h2 id="inputs-title">Inputs</h2>
-
-        <!-- Bill -->
-        <div class="field">
-          <label for="bill">Bill amount</label>
-          <div class="input-with-prefix">
-            <span class="prefix" aria-hidden="true">$</span>
-            <input id="bill" name="bill" type="text" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-describedby="bill-help">
-          </div>
-          <p id="bill-help" class="help">Type your bill; we’ll format it automatically.</p>
-          <p class="error" id="bill-error" role="alert" aria-live="polite"></p>
-        </div>
-
-        <!-- Tip -->
-        <fieldset class="field" aria-describedby="tip-help">
-          <legend>Tip</legend>
-          <div class="tip-grid" role="group" aria-label="Tip presets">
-            <button type="button" class="tip-btn" data-tip="10" aria-pressed="false">10%</button>
-            <button type="button" class="tip-btn" data-tip="15" aria-pressed="true">15%</button>
-            <button type="button" class="tip-btn" data-tip="18" aria-pressed="false">18%</button>
-            <button type="button" class="tip-btn" data-tip="20" aria-pressed="false">20%</button>
-            <button type="button" class="tip-btn" data-tip="22" aria-pressed="false">22%</button>
-            <label class="custom-tip">
-              <span class="visually-hidden">Custom tip percent</span>
-              <input id="customTip" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Custom" aria-label="Custom tip percent">
-              <span aria-hidden="true">%</span>
-            </label>
-          </div>
-          <p id="tip-help" class="help">Press Esc in the custom field to clear and return to presets.</p>
-        </fieldset>
-
-        <!-- Split -->
-        <fieldset class="field">
-          <legend>Split by people</legend>
-          <div class="stepper">
-            <button type="button" class="stepper-btn" data-step="-1" aria-label="Decrease people">−</button>
-            <input id="people" type="number" min="1" max="20" step="1" value="1" inputmode="numeric" aria-label="People count">
-            <button type="button" class="stepper-btn" data-step="1" aria-label="Increase people">+</button>
-          </div>
-          <p class="help">Range 1–20. Use Arrow keys to adjust.</p>
-        </fieldset>
-
-        <!-- Rounding -->
-        <fieldset class="field">
-          <legend>Rounding</legend>
-          <div class="radios">
-            <label><input type="radio" name="rounding" value="none" checked> No rounding</label>
-            <label><input type="radio" name="rounding" value="roundTip"> Round tip</label>
-            <label><input type="radio" name="rounding" value="roundPerPerson"> Round total/person</label>
-          </div>
-        </fieldset>
-
-        <!-- Tax -->
-        <fieldset class="field" aria-describedby="tax-help">
-          <legend>Sales tax</legend>
-          <div class="controls-row">
-            <label class="pct">
-              <span class="visually-hidden">Tax percent</span>
-              <input id="taxPct" type="number" min="0" max="100" step="0.1" inputmode="decimal" value="0" aria-label="Tax percent">
-              <span aria-hidden="true">%</span>
-            </label>
-            <label class="toggle">
-              <input id="includeTaxInTip" type="checkbox">
-              <span>Include tax in tip?</span>
-            </label>
-          </div>
-          <p id="tax-help" class="help">If on, the tip is calculated on (bill + tax). If off, the tip is calculated on bill before tax.</p>
-        </fieldset>
-
-        <!-- Service charge -->
-        <fieldset class="field" aria-describedby="svc-help">
-          <legend>Service charge</legend>
-          <div class="controls-row">
-            <label class="pct">
-              <span class="visually-hidden">Service charge percent</span>
-              <input id="servicePct" type="number" min="0" max="100" step="0.1" inputmode="decimal" value="0" aria-label="Service charge percent">
-              <span aria-hidden="true">%</span>
-            </label>
-            <label class="toggle">
-              <input id="applyService" type="checkbox">
-              <span>Apply service charge?</span>
-            </label>
-          </div>
-          <p id="svc-help" class="help">Service charge is computed from bill only and added before calculating tip.</p>
-        </fieldset>
-
-        <!-- Actions -->
-        <div class="actions">
-          <button type="button" id="resetBtn" class="btn secondary">Reset</button>
-          <button type="button" id="copyBtn" class="btn primary">Copy breakdown</button>
-        </div>
+    <main class="app-main">
+      <!-- Left column – short explanation (optional) -->
+      <section class="panel panel--info">
+        <h2 class="panel-title">How it works</h2>
+        <p>
+          Enter your bill, choose a tip, and decide how you want to round things. You can include tax in the tip,
+          apply a service charge, and split the total across people.
+        </p>
+        <ul class="feature-list">
+          <li>Smart rounding options</li>
+          <li>Supports tax &amp; service charge</li>
+          <li>Copyable breakdown for receipts or chats</li>
+        </ul>
       </section>
 
-      <section class="panel results" aria-labelledby="results-title">
-        <h2 id="results-title">Results</h2>
-        <div class="grid-results" aria-live="polite">
-          <div class="card">
-            <div class="label">Tip amount</div>
-            <div class="value" id="tipAmount">$0.00</div>
-          </div>
-          <div class="card">
-            <div class="label">Total bill</div>
-            <div class="value" id="totalAmount">$0.00</div>
-            <div class="meta" id="roundingDelta" aria-live="polite"></div>
-          </div>
-          <div class="card">
-            <div class="label">Per-person tip</div>
-            <div class="value" id="perTip">$0.00</div>
-          </div>
-          <div class="card">
-            <div class="label">Per-person total</div>
-            <div class="value" id="perTotal">$0.00</div>
-          </div>
-          <div class="card wide">
-            <div class="label">Effective tip</div>
-            <div class="meta" id="effectiveTipLabel">—</div>
-          </div>
+      <!-- Right column – the actual calculator -->
+      <section class="panel panel--calculator" aria-label="Tip calculator">
+        <div class="panel-inner">
+          <!-- Inputs -->
+          <section aria-labelledby="inputs-heading" class="inputs">
+            <h2 id="inputs-heading" class="section-heading">Inputs</h2>
+
+            <!-- Bill -->
+            <div class="field">
+              <label for="bill" class="field-label">Bill amount</label>
+              <input
+                id="bill"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                placeholder="$200.00"
+                class="field-input"
+              />
+              <p id="bill-error" class="field-error" aria-live="polite"></p>
+              <p class="field-hint">Type your bill; we’ll format it automatically.</p>
+            </div>
+
+            <!-- Tip presets + custom -->
+            <fieldset class="field fieldset">
+              <legend class="field-label">Tip</legend>
+              <div class="tip-grid">
+                <button type="button" class="tip-btn" data-tip="10">10%</button>
+                <button type="button" class="tip-btn" data-tip="15">15%</button>
+                <button type="button" class="tip-btn" data-tip="18">18%</button>
+                <button type="button" class="tip-btn" data-tip="20">20%</button>
+                <button type="button" class="tip-btn" data-tip="22">22%</button>
+                <div class="tip-custom">
+                  <label for="customTip" class="sr-only">Custom tip percentage</label>
+                  <input
+                    id="customTip"
+                    type="text"
+                    inputmode="decimal"
+                    placeholder="Custom %"
+                    class="field-input field-input--compact"
+                  />
+                </div>
+              </div>
+              <p class="field-hint">
+                Use presets for speed or set a custom percentage.
+              </p>
+            </fieldset>
+
+            <!-- People / split -->
+            <fieldset class="field fieldset">
+              <legend class="field-label">Split by people</legend>
+              <div class="stepper">
+                <button
+                  type="button"
+                  class="stepper-btn"
+                  data-dir="dec"
+                  aria-label="Decrease people"
+                >−</button>
+                <input
+                  id="people"
+                  type="number"
+                  min="1"
+                  max="20"
+                  step="1"
+                  class="field-input field-input--center"
+                  value="1"
+                  aria-label="Number of people"
+                />
+                <button
+                  type="button"
+                  class="stepper-btn"
+                  data-dir="inc"
+                  aria-label="Increase people"
+                >+</button>
+              </div>
+              <p class="field-hint">Range 1–20.</p>
+            </fieldset>
+
+            <!-- Rounding -->
+            <fieldset class="field fieldset">
+              <legend class="field-label">Rounding</legend>
+              <div class="choice-grid">
+                <label class="choice">
+                  <input type="radio" name="rounding" value="none" checked />
+                  <span>No rounding</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="rounding" value="roundTip" />
+                  <span>Round tip</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="rounding" value="roundTotal" />
+                  <span>Round total</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="rounding" value="roundPerPerson" />
+                  <span>Round per person</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Tax -->
+            <fieldset class="field fieldset">
+              <legend class="field-label">Sales tax</legend>
+              <div class="inline-row">
+                <input
+                  id="taxPct"
+                  type="text"
+                  inputmode="decimal"
+                  class="field-input field-input--short"
+                  placeholder="0"
+                  aria-label="Sales tax percentage"
+                />
+                <span class="inline-suffix">%</span>
+                <label for="includeTaxInTip" class="inline-label">
+                  <input id="includeTaxInTip" type="checkbox" />
+                  <span>Include tax in tip?</span>
+                </label>
+              </div>
+              <p class="field-hint">
+                If on, the tip is calculated on <em>bill + tax</em>. If off, tip is calculated on bill before tax.
+              </p>
+            </fieldset>
+
+            <!-- Service charge -->
+            <fieldset class="field fieldset">
+              <legend class="field-label">Service charge</legend>
+              <div class="inline-row">
+                <input
+                  id="servicePct"
+                  type="text"
+                  inputmode="decimal"
+                  class="field-input field-input--short"
+                  placeholder="0"
+                  aria-label="Service charge percentage"
+                />
+                <span class="inline-suffix">%</span>
+                <label for="applyService" class="inline-label">
+                  <input id="applyService" type="checkbox" />
+                  <span>Apply service charge?</span>
+                </label>
+              </div>
+              <p class="field-hint">
+                Service charge is computed from the bill only and added before calculating tip.
+              </p>
+            </fieldset>
+
+            <!-- Actions -->
+            <div class="actions-row">
+              <button id="resetBtn" type="button" class="btn btn--ghost">
+                Reset
+              </button>
+              <button id="copyBtn" type="button" class="btn btn--primary">
+                Copy breakdown
+              </button>
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section aria-labelledby="results-heading" class="results">
+            <h2 id="results-heading" class="section-heading">Results</h2>
+
+            <dl class="results-grid">
+              <div class="results-item">
+                <dt>Tip amount</dt>
+                <dd id="tipAmount">$0.00</dd>
+              </div>
+              <div class="results-item">
+                <dt>Tax</dt>
+                <dd id="taxAmount">$0.00</dd>
+              </div>
+              <div class="results-item">
+                <dt>Service charge</dt>
+                <dd id="serviceAmount">$0.00</dd>
+              </div>
+              <div class="results-item">
+                <dt>Total bill</dt>
+                <dd id="totalAmount">$0.00</dd>
+              </div>
+              <div class="results-item results-item--wide">
+                <dt>Per person</dt>
+                <dd id="perPersonAmount">$0.00</dd>
+              </div>
+            </dl>
+
+            <p id="resultsSummary" class="results-summary">
+              Enter a bill to see the breakdown.
+            </p>
+          </section>
         </div>
       </section>
-    </form>
-  </main>
+    </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <p>
-      © <span id="year"></span> Better Endeavors LLC — Vending, E-commerce, Web Development ·
-      <a href="mailto:hello@betterendeavors.example" rel="noopener noreferrer">Contact</a>
-    </p>
-  </footer>
-
-  <script src="scripts/script.js" defer></script>
+    <footer class="app-footer">
+      <small>
+        &copy; <span id="year"></span> Better Endeavors LLC. Built with HTML, CSS &amp; JavaScript.
+      </small>
+    </footer>
+  </div>
 </body>
 </html>
