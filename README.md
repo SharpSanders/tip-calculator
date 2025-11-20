@@ -1,4 +1,4 @@
-# 🧮 Tip Calculator  
+#  Tip Calculator  
 A modern, smart, and fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
 Designed to handle real-world restaurant scenarios: tax, service charges, rounding, per-person splits, and more.
 
@@ -6,15 +6,15 @@ Designed to handle real-world restaurant scenarios: tax, service charges, roundi
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 💵 Bill & Tip Management
+###  Bill & Tip Management
 - Auto-formatted bill input  
 - Quick-select tip buttons (10%, 15%, 18%, 20%, 22%)  
 - Custom tip percentage input  
 - Accurate calculations with rounding options  
 
-### 👥 Splitting & Rounding Options
+###  Splitting & Rounding Options
 - Split totals among **1–20 people**  
 - Smart rounding modes:  
   - **None**  
@@ -22,12 +22,12 @@ Designed to handle real-world restaurant scenarios: tax, service charges, roundi
   - **Round total**  
   - **Round per person**
 
-### 🧾 Tax & Service Charge Controls
+###  Tax & Service Charge Controls
 - Add a **sales tax %**  
 - Option to **include tax in tip calculation**  
 - Optional **service charge %** (calculated before tip)
 
-### 📊 Clean Breakdown Output
+###  Clean Breakdown Output
 - Tip amount  
 - Tax amount  
 - Service charge  
@@ -35,11 +35,11 @@ Designed to handle real-world restaurant scenarios: tax, service charges, roundi
 - Per-person total  
 - Full summary that updates live  
 
-### 📋 Copyable Summary
+###  Copyable Summary
 - Built-in “Copy breakdown” button for sending totals in messages  
 - Visual feedback when copied successfully  
 
-### 🖥️ Responsive Dark UI
+###  Responsive Dark UI
 - Modern dashboard-style interface  
 - Mobile-first  
 - Animated button states  
@@ -47,7 +47,7 @@ Designed to handle real-world restaurant scenarios: tax, service charges, roundi
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **HTML5**
 - **CSS3** (custom dark UI)
@@ -56,7 +56,7 @@ Designed to handle real-world restaurant scenarios: tax, service charges, roundi
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 tip-calculator/
 │
@@ -74,7 +74,7 @@ Copy code
 
 ---
 
-## 🔧 Setup
+##  Setup
 
 Just open:
 
@@ -87,7 +87,7 @@ in any browser — no build steps required.
 
 ---
 
-## 🌐 Live Demo (Optional)
+##  Live Demo (Optional)
 
 If you want, I can help you deploy this via:
 
@@ -99,7 +99,7 @@ Just say the word.
 
 ---
 
-## 🔗 GitHub Repository
+##  GitHub Repository
 
 https://github.com/SharpSanders/tip-calculator
 
