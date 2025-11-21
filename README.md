@@ -2,7 +2,7 @@
 A modern, smart, and fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
 Designed to handle real-world restaurant scenarios: tax, service charges, rounding, per-person splits, and more.
 
-![Tip Calculator Screenshot](./screenshot-tip-calculator.png)
+![Tip Calculator Screenshot](./img/Screenshot-tip-calculator.png)
 
 ---
 
