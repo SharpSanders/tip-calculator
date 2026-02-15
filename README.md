@@ -65,7 +65,7 @@ Handles real-world scenarios: tax, service charges, rounding, and per-person spl
 ```txt
 tip-calculator/
   index.html
-  styles.css
+  style.css
   script.js
   img/
     Screenshot-tip-calculator.png
