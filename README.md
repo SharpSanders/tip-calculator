@@ -87,7 +87,7 @@ in any browser — no build steps required.
 
 ---
 
-##  Live Demo (Optional)
+##  Live Demo (https://sharpsanders.github.io/tip-calculator/)
 
 If you want, I can help you deploy this via:
 
