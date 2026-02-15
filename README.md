@@ -1,109 +1,74 @@
-#  Tip Calculator  
-A modern, smart, and fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
-Designed to handle real-world restaurant scenarios: tax, service charges, rounding, per-person splits, and more.
+# Tip Calculator
+
+A modern, fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
+Handles real-world scenarios: tax, service charges, rounding, and per-person splits.
+
+## Live Demo
+- https://sharpsanders.github.io/tip-calculator/
 
 ![Tip Calculator Screenshot](./img/Screenshot-tip-calculator.png)
 
 ---
 
-##  Features
+## Features
 
-###  Bill & Tip Management
-- Auto-formatted bill input  
-- Quick-select tip buttons (10%, 15%, 18%, 20%, 22%)  
-- Custom tip percentage input  
-- Accurate calculations with rounding options  
+### Bill & Tip Management
+- Auto-formatted bill input
+- Quick-select tip buttons (10%, 15%, 18%, 20%, 22%)
+- Custom tip percentage input
+- Accurate calculations with rounding options
 
-###  Splitting & Rounding Options
-- Split totals among **1–20 people**  
-- Smart rounding modes:  
-  - **None**  
-  - **Round tip**  
-  - **Round total**  
-  - **Round per person**
+### Splitting & Rounding Options
+- Split totals among **1–20 people**
+- Rounding modes:
+  - None
+  - Round tip
+  - Round total
+  - Round per person
 
-###  Tax & Service Charge Controls
-- Add a **sales tax %**  
-- Option to **include tax in tip calculation**  
+### Tax & Service Charge Controls
+- Add a **sales tax %**
+- Option to **include tax in tip calculation**
 - Optional **service charge %** (calculated before tip)
 
-###  Clean Breakdown Output
-- Tip amount  
-- Tax amount  
-- Service charge  
-- Total bill  
-- Per-person total  
-- Full summary that updates live  
+### Clean Breakdown Output
+- Tip amount, tax amount, service charge, total bill
+- Per-person total + full summary that updates live
 
-###  Copyable Summary
-- Built-in “Copy breakdown” button for sending totals in messages  
-- Visual feedback when copied successfully  
+### Copyable Summary
+- “Copy breakdown” button for quickly sharing totals
+- Visual feedback on successful copy
 
-###  Responsive Dark UI
-- Modern dashboard-style interface  
-- Mobile-first  
-- Animated button states  
-- Accessible form controls  
+### Responsive Dark UI
+- Modern dashboard-style interface
+- Mobile-first, accessible form controls
 
 ---
 
-##  Tech Stack
-
-- **HTML5**
-- **CSS3** (custom dark UI)
-- **JavaScript (ES6+)**
-- No frameworks — lightweight & fast
+## Tech Stack
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 
 ---
 
-##  Project Structure
+## What I Learned
+- Managing UI state updates cleanly with vanilla JS
+- Handling rounding modes without drifting totals
+- Building reusable calculation helpers and keeping logic separate from DOM updates
+- Using the Clipboard API for a smooth “copy summary” UX
+- Defensive input handling (empty values, bounds for splits, formatting)
 
+---
+
+## Project Structure
+```txt
 tip-calculator/
-│
-├── index.html
-├── style.css
-├── script.js
-├── calc.test.js # logic tests (optional)
-├── favicon.ico
-├── favicon.svg
-├── logo.svg
-└── screenshot-tip-calculator.png
-
-yaml
-Copy code
-
----
-
-##  Setup
-
-Just open:
-
-index.html
-
-yaml
-Copy code
-
-in any browser — no build steps required.
-
----
-
-##  Live Demo (https://sharpsanders.github.io/tip-calculator/)
-
-If you want, I can help you deploy this via:
-
-- GitHub Pages  
-- Netlify  
-- Vercel  
-
-Just say the word.
-
----
-
-##  GitHub Repository
-
-https://github.com/SharpSanders/tip-calculator
-
----
-
-### © 2025 Better Endeavors LLC  
-Built with clean code, modern UI, and pure JavaScript.
+  index.html
+  styles.css
+  script.js
+  img/
+    Screenshot-tip-calculator.png
+  favicon.ico
+  favicon.svg
+  logo.svg
