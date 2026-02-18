@@ -1,67 +1,73 @@
 # Tip Calculator
 
-A modern, fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
-Handles real-world scenarios: tax, service charges, rounding, and per-person splits.
+A production-style, fully responsive tip calculator built with **HTML, CSS, and vanilla JavaScript**.  
+Designed to handle real-world restaurant scenarios including tax, service charges, rounding strategies, and per-person bill splitting.
 
-## Live Demo
-- https://sharpsanders.github.io/tip-calculator/
+## 🔗 Live Demo
+https://sharpsanders.github.io/tip-calculator/
 
 ![Tip Calculator Screenshot](./img/Screenshot-tip-calculator.png)
 
 ---
 
-## Features
+## 🚀 Key Features
 
-### Bill & Tip Management
+### Bill & Tip Input
 - Auto-formatted bill input
-- Quick-select tip buttons (10%, 15%, 18%, 20%, 22%)
-- Custom tip percentage input
-- Accurate calculations with rounding options
+- Preset tip buttons (10%, 15%, 18%, 20%, 22%)
+- Custom tip percentage support
+- Accurate calculations with configurable rounding
 
-### Splitting & Rounding Options
-- Split totals among **1–20 people**
-- Rounding modes:
-  - None
+### Splitting & Rounding Logic
+- Split totals between **1–20 people**
+- Multiple rounding strategies:
+  - No rounding
   - Round tip
   - Round total
   - Round per person
 
-### Tax & Service Charge Controls
-- Add a **sales tax %**
-- Option to **include tax in tip calculation**
-- Optional **service charge %** (calculated before tip)
+### Tax & Service Controls
+- Optional sales tax %
+- Toggle to include tax in tip calculation
+- Optional service charge % (applied before tip)
 
-### Clean Breakdown Output
-- Tip amount, tax amount, service charge, total bill
-- Per-person total + full summary that updates live
+### Live Breakdown Output
+- Tip amount
+- Tax amount
+- Service charge
+- Total bill
+- Per-person total
+- Auto-updating summary panel
 
-### Copyable Summary
-- “Copy breakdown” button for quickly sharing totals
-- Visual feedback on successful copy
-
-### Responsive Dark UI
-- Modern dashboard-style interface
-- Mobile-first, accessible form controls
+### UX Enhancements
+- Copy-to-clipboard breakdown summary
+- Visual confirmation feedback
+- Mobile-first responsive design
+- Accessible, keyboard-friendly inputs
 
 ---
 
-## Tech Stack
-- HTML5
-- CSS3
+## 🧠 Technical Highlights
+
+- Structured separation between calculation logic and DOM updates
+- Reusable helper functions for monetary formatting
+- Guard clauses for defensive input validation
+- Controlled rounding to prevent floating-point drift
+- Clipboard API integration for improved UX
+
+---
+
+## 🛠 Tech Stack
+
+- HTML5 (semantic structure)
+- CSS3 (custom dark UI, responsive layout)
 - JavaScript (ES6+)
+- No frameworks — lightweight and dependency-free
 
 ---
 
-## What I Learned
-- Managing UI state updates cleanly with vanilla JS
-- Handling rounding modes without drifting totals
-- Building reusable calculation helpers and keeping logic separate from DOM updates
-- Using the Clipboard API for a smooth “copy summary” UX
-- Defensive input handling (empty values, bounds for splits, formatting)
+## 📂 Project Structure
 
----
-
-## Project Structure
 ```txt
 tip-calculator/
   index.html
@@ -72,3 +78,13 @@ tip-calculator/
   favicon.ico
   favicon.svg
   logo.svg
+▶ Run Locally
+Clone the repository
+
+Open index.html in your browser
+
+No build tools or dependencies required.
+
+👤 Author
+Built by Trevyn Sanders
+Better Endeavors LLC
